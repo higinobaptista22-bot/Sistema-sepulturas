@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sepulturas | Sepultura+</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header class="topbar"><button class="mobile-menu" id="menuBtn">☰</button><a class="brand" href="index.html">🪦 <span>Sepultura+</span></a><div class="top-actions"><span id="clock"></span><span class="avatar">A</span></div></header>
+<div class="layout"><aside class="sidebar" id="sidebar"><nav>
+<a href="index.html">📊 <span>Dashboard</span></a><a class="active" href="sepulturas.html">🪦 <span>Sepulturas</span></a><a href="mapa.html">🗺️ <span>Mapa do Cemitério</span></a><a href="rastreabilidade.html">🔎 <span>Rastreabilidade</span></a><a href="ambiental.html">🌱 <span>Gestão Ambiental</span></a><a href="relatorios.html">📑 <span>Relatórios</span></a>
+</nav><div class="sidebar-bottom"><small>Sistema académico</small><strong>Sepultura+</strong><span>v1.0</span></div></aside>
+<main class="content">
+<div class="page-header"><div><span class="eyebrow">CADASTRO</span><h1>Sepulturas</h1><p>Registe, consulte e acompanhe as sepulturas.</p></div><button class="btn primary" id="newBtn">＋ Nova Sepultura</button></div>
+<section class="panel" id="formPanel" hidden>
+<div class="panel-header"><div><h2 id="formTitle">Registar Sepultura</h2><p>Preencha os dados abaixo.</p></div></div>
+<form id="graveForm" class="form-grid">
+<input type="hidden" id="editId">
+<label>Código<input id="codigo" required placeholder="Ex.: SP-0249"></label>
+<label>Nome do falecido<input id="nome" required placeholder="Nome completo"></label>
+<label>Data de nascimento<input id="nascimento" type="date"></label>
+<label>Data de falecimento<input id="falecimento" type="date" required></label>
+<label>Data do sepultamento<input id="sepultamento" type="date"></label>
+<label>Setor/Quadra<select id="setor"><option>A</option><option>B</option><option>C</option><option>D</option></select></label>
+<label>Fila<input id="fila" type="number" min="1" placeholder="Ex.: 3"></label>
+<label>Número da campa<input id="campa" type="number" min="1" placeholder="Ex.: 12"></label>
+<label>Estado<select id="estado"><option>Ocupada</option><option>Disponível</option><option>Manutenção</option></select></label>
+<label class="full">Observações<textarea id="observacoes" rows="3" placeholder="Informações adicionais"></textarea></label>
+<div class="form-actions full"><button type="button" class="btn ghost" id="cancelBtn">Cancelar</button><button class="btn primary">Guardar</button></div>
+</form>
+</section>
+<section class="panel">
+<div class="toolbar"><div class="search"><span>⌕</span><input id="search" placeholder="Pesquisar por nome, código ou setor..."></div><select id="filter"><option value="">Todos os estados</option><option>Ocupada</option><option>Disponível</option><option>Manutenção</option></select></div>
+<div class="table-wrap"><table><thead><tr><th>Código</th><th>Falecido</th><th>Setor</th><th>Campa</th><th>Estado</th><th>Data</th><th>Ações</th></tr></thead><tbody id="graveTable"></tbody></table></div>
+</section>
+</main></div>
+<script src="js/data.js"></script><script src="js/sepulturas.js"></script>
+</body></html>
